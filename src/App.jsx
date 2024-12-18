@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import Cook from "./svg/cook";
+import Cook from "./svg/Cook.jsx";
 
 export default function App() {
   return (
