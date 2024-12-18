@@ -58,8 +58,8 @@ const CreateRecipe = () => {
     <div className="h-auto w-screen px-10 sm:px-36 overflow-x-hidden">
       <h1 className="text-3xl font-bold text-center py-6">Create Recipe</h1>
       <div className="flex flex-col items-center text-xl font-bold ">
-        <div className="grid grid-cols-2 mb-6">
-          <h2>Recipe Name</h2>
+        <div className="grid sm:grid-cols-2 grid-cols-1 mb-6">
+          <h2 className="sm:mb-0 mb-1 sm:text-xl text-base">Recipe Name</h2>
           <input
             className=" text-[#6600ff] pl-6 py-2 rounded-lg border-none oultline-none focus:border-none focus:outline-none"
             placeholder="Write recipe name"
@@ -67,8 +67,8 @@ const CreateRecipe = () => {
             onChange={(e) => handleInputChange("Recipe", e.target.value)}
           />
         </div>
-        <div className=" grid grid-cols-2 mb-6">
-          <h2>Serving</h2>
+        <div className=" grid sm:grid-cols-2 grid-cols-1 mb-6">
+          <h2 className="sm:mb-0 mb-1 sm:text-xl text-base">Serving</h2>
           <input
             className="text-[#6600ff] pl-6 py-2 rounded-lg border-none oultline-none focus:border-none focus:outline-none"
             placeholder="Number of person"
@@ -80,7 +80,7 @@ const CreateRecipe = () => {
       <div className="flex justify-center">
         <Button
           onClick={OnGenerateRecipe}
-          className="w-[80%] bg-[#fafafa] text-[#6600ff] font-bold uppercase hover:animate-pulse"
+          className="w-[80%] bg-[#fafafa] sm:mt-0 mt-4 text-[#6600ff] font-bold uppercase hover:animate-pulse"
           disabled={loading}
         >
           {loading ? "Generating..." : "Create Recipe"}
@@ -89,7 +89,7 @@ const CreateRecipe = () => {
       {error && <p style={{ color: "red" }}>{error}</p>}
 
       {shoppingList && (
-        <div className="text-center my-12 border-2 border-[#fafafa] p-8">
+        <div className="text-center my-12 border-2 border-[#fafafa] sm:p-8 p-4">
           <h1 className="text-2xl font-semibold">
             Shopping List for {shoppingList.shopping_list.recipe}
           </h1>
