@@ -20,10 +20,6 @@ const CreateRecipe = () => {
 
   useEffect(() => {}, [formData]);
 
-  // useEffect(() => {
-  //   setData();
-  // }, [OnGenerateRecipe]);
-
   const OnGenerateRecipe = async () => {
     if (formData?.Serving < 1 && !formData?.Recipe) {
       console.log("please fill all details");
@@ -42,7 +38,6 @@ const CreateRecipe = () => {
       const result = await chatSession.sendMessage(FinalPrompt);
       const responseText = await result?.response?.text();
       const parsedData = JSON.parse(responseText);
-
       setShoppingList(parsedData);
     } catch (err) {
       setError("Failed to generate recipe. Please try again!");
@@ -51,8 +46,6 @@ const CreateRecipe = () => {
       setLoading(false);
     }
   };
-
-  console.log(shoppingList);
 
   return (
     <div className="h-auto w-screen px-10 sm:px-36 overflow-x-hidden">
